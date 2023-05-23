@@ -5,36 +5,62 @@ import { useEffect, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 const Header = () => {
-
   const headerRef = useRef(null);
 
+  useEffect(() => {
+    let prevScrollPos = window.scrollY;
 
-    useEffect(() => {
-        let prevScrollPos = window.scrollY;
-    
-        const handleScroll = () => {
-          const currentScrollPos = window.scrollY;
-          const headerElement = headerRef.current;
-          if (!headerElement) {
-            return;
-          }
-          if (prevScrollPos > currentScrollPos) {
-            headerElement.style.transform = "translateY(0)";
-          } else {
-            headerElement.style.transform = "translateY(-200px)";
-          }
-          prevScrollPos = currentScrollPos;
-        };
-        window.addEventListener("scroll", handleScroll);
-    
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const headerElement = headerRef.current;
+      if (!headerElement) {
+        return;
+      }
+      if (prevScrollPos > currentScrollPos) {
+        headerElement.style.transform = "translateY(0)";
+      } else {
+        headerElement.style.transform = "translateY(-200px)";
+      }
+      prevScrollPos = currentScrollPos;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleClick = (anchor) => () => {
+    const id = `.${anchor}`;
+    const element = document.querySelector(id);
+
+    var scrollTimeout;
+
+    const handleScroll2 = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        window.removeEventListener("scroll", handleScroll2);
+        const headerElement = headerRef.current;
+        if (!headerElement) {
+          return;
+        }
+        headerElement.style.transform = "translateY(-200px)";
+      }, 100);
+    };
+
+    window.addEventListener("scroll", handleScroll2);
+
+    if (element) {
+      element.scrollIntoView({
+        alignToTop: true,
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <>
-      <Navbar bg="light" expand="lg" as='header' ref={headerRef}>
+      <Navbar bg="light" expand="lg" as="header" ref={headerRef}>
         <Container>
           <Navbar.Brand as={NavLink} to="/" className="active">
             <img className="logo-img" src={Logo} alt="Little Lemon logo" />
@@ -45,13 +71,28 @@ const Header = () => {
               <Nav.Link as={NavLink} to="/" className="active">
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/#About" className="active">
+              <Nav.Link
+                as={NavLink}
+                to="/#About"
+                className="active"
+                onClick={handleClick("hero-section")}
+              >
                 About
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/#About" className="active">
+              <Nav.Link
+                as={NavLink}
+                to="/#About"
+                className="active"
+                onClick={handleClick("specials-section")}
+              >
                 Our specials
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/#Tetimonials" className="active">
+              <Nav.Link
+                as={NavLink}
+                to="/#Tetimonials"
+                className="active"
+                onClick={handleClick("testominials-section")}
+              >
                 Tetimonials
               </Nav.Link>
               <Nav.Link as={NavLink} to="/reservations" className="active">
