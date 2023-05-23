@@ -1,0 +1,17 @@
+.specials-section {
+  padding: 40px 0;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .ourSpecials{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}

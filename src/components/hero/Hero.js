@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 
 const Hero = () => {
   return (
-    <div className="hero-section">
+    <section className="hero-section">
       <Container>
         <div className="section-left">
           <h1>Little Lemon</h1>
@@ -22,7 +22,7 @@ const Hero = () => {
             whether you're looking for a romantic night out or a dine out with
             your family or friends.
           </p>
-          <a className="btn btn-main2" href="/reservations">
+          <a className="btn btn-main2 btn-lg" href="/reservations">
             Reserve a Table
           </a>
         </div>
@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 

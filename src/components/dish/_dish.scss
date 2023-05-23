@@ -1,0 +1,44 @@
+.dishBox {
+  background-color: #edefee;
+  margin-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 32%;
+    img {
+      max-height: 184px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    img {
+      max-height: 264px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .padder {
+    padding: 16px;
+    padding-bottom: 24px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
+    font-weight: bold;
+  }
+  .dectription p {
+    color: $main1;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+}
