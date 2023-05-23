@@ -5,11 +5,9 @@ import Home from './pages/home/Home';
 import Reservations from './pages/reservation/Reservations';
 
 import {Route, Routes, BrowserRouter} from "react-router-dom";
-import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   return (
-    <ChakraProvider>
     <div>
       <BrowserRouter>
       <Header />
@@ -20,7 +18,6 @@ function App() {
       <Footer />
       </BrowserRouter>
     </div>
-    </ChakraProvider>
   );
 }
 
