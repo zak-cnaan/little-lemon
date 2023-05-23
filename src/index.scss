@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+$theme-colors: (
+    "info": tomato,
+    "danger": teal,
+    "primary": #900
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+// Global styles
+body{
+  color:#000;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+// Components
+@import "/src/components/header/header"
+

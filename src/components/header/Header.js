@@ -1,5 +1,3 @@
-import "./header.css";
-
 import Logo from "../../assets/images/logo.jpg";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -10,6 +8,7 @@ const Header = () => {
 
   return (
     <div as="header">
+        <button  type="button" className="btn btn-primary">asdf</button>
       <div maxW={"container.xl"}>
         <div px={0} py={4} justifyContent="space-between" alignItems="center">
           <NavLink to="/">
