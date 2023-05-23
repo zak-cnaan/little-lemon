@@ -1,5 +1,9 @@
 header {
   border-bottom: 5px solid #495e57;
+  background-color: #fff;
+  position: sticky !important;
+  top:0;
+  transition: transform 0.4s;
 }
 
 .logo-img {
