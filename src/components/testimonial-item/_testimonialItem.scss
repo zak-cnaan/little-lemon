@@ -1,0 +1,52 @@
+.testominals-list .itemBox {
+  background-color: #edefee;
+  margin-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 16px;
+
+  .padder {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  > img {
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+
+  .dectription {
+    color: $main1;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    .rate {
+      color: $main2;
+      font-size: 24px;
+      text-shadow: 1px 1px #000;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .testominals-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+flex-wrap: wrap;
+    .itemBox {
+      flex: 0 0 48%;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .testominals-list{
+    .itemBox {
+      flex: 0 0 22%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.testominials-section {
+  padding: 40px 0;
+  background-color: $main1;
+  h2{
+    text-align: center;
+    color: $main2;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .ourSpecials{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}

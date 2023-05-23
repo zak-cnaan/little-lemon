@@ -39,7 +39,7 @@ const Specials = () => {
         <div className="ourSpecials">
           {dishes.map((dish) => {
             return (
-              <Dish dish={dish} />
+              <Dish key={dish.id} dish={dish} />
             );
           })}
         </div>
