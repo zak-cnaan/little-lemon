@@ -14,13 +14,14 @@ header {
   }
 }
 
-.nav-link{
-    font-size: 16px;
-    color:#696 !important;
-    &:hover{
-        color:#495e57 !important;
-        text-decoration: underline;
-    }
+.nav-link {
+  font-size: 16px;
+  color: #696 !important;
+  &:hover,
+  &:active {
+    color: #495e57 !important;
+    text-decoration: underline;
+  }
 }
 .nav-menu {
   display: flex;
