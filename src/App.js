@@ -11,14 +11,14 @@ function App() {
   return (
     <ChakraProvider>
     <div>
-      <Header />
       <BrowserRouter>
+      <Header />
       <Routes>
         <Route path = "/" element = {<Home />}/>
         <Route path = "/reservations" element = {<Reservations />}/>
       </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </div>
     </ChakraProvider>
   );
