@@ -1,6 +1,12 @@
+import { Container } from "@chakra-ui/react";
+
 const Header = () => {
     return (
-        <div>header</div>
+        <header>
+            <Container maxW={'container.xl'}>
+                sdfsdf
+            </Container>
+        </header>
     )
 }
 
