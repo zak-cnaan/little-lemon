@@ -11,10 +11,10 @@ const Footer = () => {
                         <div className="locations">
                             <h5>LOCATIONS</h5>
                             <ul>
-                                <li>Accra</li>
-                                <li>Kumasi</li>
-                                <li>Cape Coast</li>
-                                <li>Tamale</li>
+                                <li>Tel Aviv</li>
+                                <li>Haifa</li>
+                                <li>Bat yam</li>
+                                <li>Lod</li>
                             </ul>
                         </div>
                         <div className="opening-times">
@@ -28,9 +28,9 @@ const Footer = () => {
                         <div className="contact">
                             <h5>CONTACT US</h5>
                             <ul>
-                                <li>96 Abafom Road, North Ridge - Accra</li>
-                                <li>Tel: 020 7928 0678</li>
-                                <li>Email: info@littlelemon.com</li>
+                                <li>96 Rodchild Av, TA</li>
+                                <li>Tel: <a href='tel:077 550 8766'>077 550 8766</a></li>
+                                <li>Email: <a href='mailto:info@littlelemon.com'>info@littlelemon.com</a></li>
                             </ul>
                         </div>
                 </div>

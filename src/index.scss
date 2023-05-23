@@ -13,10 +13,16 @@ code {
 } */
 
 $theme-colors: (
-    "info": tomato,
-    "danger": teal,
-    "primary": #900
+    "zak" : #020,
+    "main1": #495e57,
+    "main2": #f4ce14,
 );
+
+$zak : #020;
+$main1 : #495e57;
+$main2 : #f4ce14;
+
+
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -27,7 +33,13 @@ body{
   line-height: 1.6;
 }
 
+img{
+  display: block;
+  max-width: 100%;
+}
+
 // Components
 @import "/src/components/header/header";
-@import "/src/components/footer/footer"
+@import "/src/components/footer/footer";
+@import "/src/components/hero/hero";
 

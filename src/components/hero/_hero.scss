@@ -1,0 +1,45 @@
+.hero-section {
+  background-color: $main1;
+  color: #fff;
+  padding: 16px 0;
+
+  h1 {
+    font-size: 36px;
+    color: $main2;
+  }
+
+  .section-left {
+    margin-bottom: 20px;
+  }
+
+  .section-right img {
+    border-radius: 12px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .section-left {
+      flex: 0 0 60%;
+      padding-right: 24px;
+      font-size: 18px;
+    }
+
+    .section-right {
+      padding-top: 100px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .section-right {
+        padding-left: 86px;
+    }
+    .section-left {
+        flex: 0 0 50%;
+        font-size: 24px;
+      }
+
+  }
+}

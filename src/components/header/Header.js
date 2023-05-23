@@ -22,7 +22,7 @@ const Header = () => {
                 About
               </Nav.Link>
               <Nav.Link as={NavLink} to="/#About" className="active">
-                About
+                Our specials
               </Nav.Link>
               <Nav.Link as={NavLink} to="/#Tetimonials" className="active">
                 Tetimonials

@@ -10,16 +10,18 @@ header {
   }
 
   @include media-breakpoint-up(lg) {
-    width: 240px;
+    width: 200px;
   }
 }
 
 .nav-link {
   font-size: 16px;
-  color: #696 !important;
+  color: #495e57 !important;
+  font-weight: bold;
   &:hover,
   &:active {
     color: #495e57 !important;
+    opacity: 0.85;
     text-decoration: underline;
   }
 }
@@ -37,18 +39,3 @@ header {
   color: #495e57;
 }
 
-.nav {
-  position: absolute;
-  right: 0;
-  top: 0;
-  @media (min-width: 700px) {
-    display: block;
-    position: static;
-  }
-}
-
-.IconButton {
-  @media (min-width: 700px) {
-    display: none !important;
-  }
-}
