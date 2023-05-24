@@ -3,7 +3,7 @@ import BookingForm from "../../components/bookingForm/BookingForm";
 import BookingImg from "../../assets/images/BookingImg.jpg";
 
 
-const BookingPage = () => {
+const BookingPage = (props) => {
   return (
     <Container className="reservation-page">
       <h1>Reserve a table</h1>
@@ -14,7 +14,7 @@ const BookingPage = () => {
         possimus, blanditiis sunt dolor.
       </p>
       <div className="formLayout">
-        <BookingForm />
+        <BookingForm availableTimes={props.availableTimes} />
         <div>
           <img src={BookingImg} alt="" className="BookingImg" />
         </div>

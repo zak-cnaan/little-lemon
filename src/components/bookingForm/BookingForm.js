@@ -1,16 +1,8 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 
-const ReservationForm = () => {
+const ReservationForm = (props) => {
   const [validated, setValidated] = useState(false);
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -36,7 +28,7 @@ const ReservationForm = () => {
       <Form.Group controlId="res-time" className="mb-4">
         <Form.Label>Choose time</Form.Label>
         <Form.Select aria-label="Choose time">
-          {availableTimes.map((option) => {
+          {props.availableTimes.map((option) => {
             return <option value={option}>{option}</option>;
           })}
         </Form.Select>
