@@ -14,7 +14,7 @@ const BookingPage = (props) => {
         possimus, blanditiis sunt dolor.
       </p>
       <div className="formLayout">
-        <BookingForm availableTimes={props.availableTimes} />
+        <BookingForm availableTimes={props.availableTimes} dispatchTimes={props.dispatchTimes} />
         <div>
           <img src={BookingImg} alt="" className="BookingImg" />
         </div>

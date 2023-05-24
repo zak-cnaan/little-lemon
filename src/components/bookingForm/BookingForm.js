@@ -14,11 +14,18 @@ const ReservationForm = (props) => {
     setValidated(true);
   };
 
+  const { dispatchTimes } = props;
+
+  const onDateChange = (e) => {
+    const date = e.target.value;
+    dispatchTimes(new Date(date));
+  };
+
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group controlId="res-date" className="mb-4">
         <Form.Label>Choose date</Form.Label>
-        <Form.Control required type="date" />
+        <Form.Control required type="date" onChange={onDateChange} />
         <Form.Control.Feedback type="invalid">
           Please choose a date.
         </Form.Control.Feedback>
@@ -29,7 +36,11 @@ const ReservationForm = (props) => {
         <Form.Label>Choose time</Form.Label>
         <Form.Select aria-label="Choose time">
           {props.availableTimes.map((option) => {
-            return <option value={option}>{option}</option>;
+            return (
+              <option value={option} key={option}>
+                {option}
+              </option>
+            );
           })}
         </Form.Select>
         <Form.Control.Feedback type="invalid">
