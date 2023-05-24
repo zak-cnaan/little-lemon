@@ -5,16 +5,21 @@ const ReservationForm = (props) => {
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
     }
 
     setValidated(true);
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    submitData(data);
+
   };
 
-  const { dispatchTimes } = props;
+  const { dispatchTimes, submitData } = props;
 
   const onDateChange = (e) => {
     const date = e.target.value;
@@ -25,7 +30,7 @@ const ReservationForm = (props) => {
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group controlId="res-date" className="mb-4">
         <Form.Label>Choose date</Form.Label>
-        <Form.Control required type="date" onChange={onDateChange} />
+        <Form.Control required type="date" onChange={onDateChange} name='date' />
         <Form.Control.Feedback type="invalid">
           Please choose a date.
         </Form.Control.Feedback>
@@ -34,7 +39,7 @@ const ReservationForm = (props) => {
 
       <Form.Group controlId="res-time" className="mb-4">
         <Form.Label>Choose time</Form.Label>
-        <Form.Select aria-label="Choose time">
+        <Form.Select aria-label="Choose time" name='time'>
           {props.availableTimes.map((option) => {
             return (
               <option value={option} key={option}>
@@ -57,6 +62,7 @@ const ReservationForm = (props) => {
           placeholder="Number of guests"
           min="1"
           max="10"
+          name='guests'
         />
         <Form.Control.Feedback type="invalid">
           Please choose 1 - 10 guests.
@@ -66,7 +72,7 @@ const ReservationForm = (props) => {
 
       <Form.Group controlId="occasion" className="mb-4">
         <Form.Label>Choose Occasion</Form.Label>
-        <Form.Select aria-label="Choose Occasion">
+        <Form.Select aria-label="Choose Occasion" name="occasion">
           <option value={"Birthday"}>Birthday</option>
           <option value={"Anniversary"}>Anniversary</option>
         </Form.Select>

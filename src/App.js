@@ -8,33 +8,31 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { fetchAPI, submitAPI } from "./bookingAPI";
 
 function App() {
-  // const updateTimes = (date) => {
-  //   dispatchAvailableTimes(["18:00", "22:00"]);
-  // };
-
-
-
-
-
-  const initializeTimes = {availableTimes:[]};
+  const initializeTimes = { availableTimes: [] };
   const updateTimes = (state, action) => {
-    return {availableTimes: action}
-  }
+    return { availableTimes: action };
+  };
 
   const [state, dispatch] = useReducer(updateTimes, initializeTimes);
 
   const getTimesFromAPI = (date) => {
     const returnedTimes = fetchAPI(date);
     dispatch(returnedTimes);
-  }
+  };
 
-// set initials times for today
+  // set initials times for today
   useEffect(() => {
     const today = new Date();
     getTimesFromAPI(today);
-    
   }, []);
 
+  const submitData = (data) => {
+    const result = submitAPI(data);
+    console.log(result);
+    if (result) {
+      console.log("Yeah");
+    }
+  };
 
   return (
     <>
@@ -44,7 +42,13 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route
             path="/booking"
-            element={<BookingPage availableTimes={state.availableTimes} dispatchTimes={getTimesFromAPI} />}
+            element={
+              <BookingPage
+                availableTimes={state.availableTimes}
+                dispatchTimes={getTimesFromAPI}
+                submitData={submitData}
+              />
+            }
           />
         </Routes>
         <Footer />
