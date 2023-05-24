@@ -1,0 +1,43 @@
+.reservation-page {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  h1 {
+    color: $main1;
+  }
+
+  .abstract {
+    color: $main1;
+  }
+
+  .formLayout {
+    .ReservationImg {
+      display: none;
+    }
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      form {
+        flex: 0 0 400px;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      > div {
+        flex: 1;
+      }
+
+      .ReservationImg {
+        display: block;
+        padding: 28px 0 0 40px;
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // form {
+    //   max-width: 400px;
+    // }
+  }
+}

@@ -10,11 +10,11 @@ const TestimonialItem = (props) => {
           <h3>{item.name}</h3>
           <div className="rate">
             {[...Array(item.rate)].map((x, i) => (
-              <span>&#10022;</span>
+              <span key={i}>&#10022;</span>
             ))}
 
             {item.rate < 5 && [...Array(5 - item.rate)].map((x, i) => (
-              <span>&#10023;</span>
+              <span key={i}>&#10023;</span>
             ))}
           </div>
         </div>
