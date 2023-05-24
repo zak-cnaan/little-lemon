@@ -22,7 +22,7 @@ const Hero = () => {
             whether you're looking for a romantic night out or a dine out with
             your family or friends.
           </p>
-          <a className="btn btn-main2 btn-lg" href="/reservations">
+          <a className="btn btn-main2 btn-lg" href="/booking">
             Reserve a Table
           </a>
         </div>

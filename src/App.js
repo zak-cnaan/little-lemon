@@ -2,12 +2,18 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import HomePage from "./pages/home/Home";
 import BookingPage from "./pages/booking/Booking";
+import ConfirmBookingPage from "./pages/confirm-booking/confirmBooking";
+
 import { useEffect, useReducer } from "react";
 
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { fetchAPI, submitAPI } from "./bookingAPI";
 
+import { useNavigate } from "react-router-dom";
+
 function App() {
+  const navigate = useNavigate();
+
   const initializeTimes = { availableTimes: [] };
   const updateTimes = (state, action) => {
     return { availableTimes: action };
@@ -30,29 +36,29 @@ function App() {
     const result = submitAPI(data);
     console.log(result);
     if (result) {
-      console.log("Yeah");
+      window.localStorage.setItem('bookingInfo', JSON.stringify(data));
+      navigate("/confirm-booking");
     }
   };
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/booking"
-            element={
-              <BookingPage
-                availableTimes={state.availableTimes}
-                dispatchTimes={getTimesFromAPI}
-                submitData={submitData}
-              />
-            }
-          />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/booking"
+          element={
+            <BookingPage
+              availableTimes={state.availableTimes}
+              dispatchTimes={getTimesFromAPI}
+              submitData={submitData}
+            />
+          }
+        />
+        <Route path="/confirm-booking" element={<ConfirmBookingPage />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
