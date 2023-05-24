@@ -17,7 +17,7 @@ const Hero = () => {
             foods. Memories are made when we come together, share a bottle of
             wine and a couple of stories, add to this a thoughtfully prepared
             meal and the memory become unforgetable, this is what inspire us at
-            pappardelle ristorante. The new Pappardelle offers delicious and
+            The Little Lemon. The Little lemon offers delicious and
             traditional italian dishes with a little touch of modern cuisine
             whether you're looking for a romantic night out or a dine out with
             your family or friends.
