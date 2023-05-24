@@ -29,6 +29,10 @@ const Header = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   const handleClick = (anchor) => () => {
     const id = `.${anchor}`;
     const element = document.querySelector(id);
@@ -68,7 +72,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={NavLink} to="/" className="active">
+              <Nav.Link as={NavLink} to="/" className="active" onClick={scrollToTop}>
                 Home
               </Nav.Link>
               <Nav.Link
@@ -95,7 +99,7 @@ const Header = () => {
               >
                 Tetimonials
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/reservations" className="active">
+              <Nav.Link as={NavLink} to="/reservations" className="active" onClick={scrollToTop}>
                 Reservations
               </Nav.Link>
             </Nav>
