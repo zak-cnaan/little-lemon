@@ -1,5 +1,7 @@
 import { Container } from "react-bootstrap";
 import BookingForm from "../../components/bookingForm/BookingForm";
+import BookingImg from "../../assets/images/BookingImg.jpg";
+
 
 const BookingPage = () => {
   return (
@@ -11,7 +13,12 @@ const BookingPage = () => {
         temporibus quod. Laborum recusandae a asperiores perferendis suscipit
         possimus, blanditiis sunt dolor.
       </p>
-      <BookingForm />
+      <div className="formLayout">
+        <BookingForm />
+        <div>
+          <img src={BookingImg} alt="" className="BookingImg" />
+        </div>
+      </div>
     </Container>
   );
 };
