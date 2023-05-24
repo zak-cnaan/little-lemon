@@ -4,6 +4,14 @@ import ReservationImg from "../../assets/images/reservation form.jpg";
 
 const ReservationForm = () => {
   const [validated, setValidated] = useState(false);
+  const [availableTimes , setAvailableTimes ] = useState([
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+  ]);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -30,12 +38,9 @@ const ReservationForm = () => {
         <Form.Group controlId="res-time" className="mb-4">
           <Form.Label>Choose time</Form.Label>
           <Form.Select aria-label="Choose time">
-            <option value="17:00">17:00</option>
-            <option value="18:00">18:00</option>
-            <option value="19:00">19:00</option>
-            <option value="20:00">20:00</option>
-            <option value="21:00">21:00</option>
-            <option value="22:00">22:00</option>
+            {availableTimes.map((option) => {
+                return (<option value={option}>{option}</option>)
+            })}
           </Form.Select>
           <Form.Control.Feedback type="invalid">
             Please choose the time.
