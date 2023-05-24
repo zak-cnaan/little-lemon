@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
-import ReservationImg from "../../assets/images/reservation form.jpg";
+import BookingImg from "../../assets/images/BookingImg.jpg";
 
 const ReservationForm = () => {
   const [validated, setValidated] = useState(false);
@@ -79,7 +79,7 @@ const ReservationForm = () => {
         </Button>
       </Form>
       <div>
-        <img src={ReservationImg} alt="" className="ReservationImg" />
+        <img src={BookingImg} alt="" className="BookingImg" />
       </div>
     </div>
   );

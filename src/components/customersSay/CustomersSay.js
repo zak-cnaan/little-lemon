@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import TestimonialItem from "../testimonial-item/TestimonialItem";
+import Testimonial from "../testimonial-item/TestimonialItem";
 
 const testimonials = [
   {
@@ -38,14 +38,14 @@ const testimonials = [
     rate: 5,
   },
 ];
-const Testominials = () => {
+const CustomersSay = () => {
   return (
     <section className="testominials-section">
       <Container>
-        <h2>Testominials</h2>
+        <h2>Testimonials</h2>
         <div className="testominals-list">
           {testimonials.map((item) => {
-            return <TestimonialItem key={item.id} item={item} />;
+            return <Testimonial key={item.id} item={item} />;
           })}
         </div>
       </Container>
@@ -53,4 +53,4 @@ const Testominials = () => {
   );
 };
 
-export default Testominials;
+export default CustomersSay;

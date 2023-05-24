@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
-import ReservationForm from "../../components/ReservationForm/ReservationForm";
+import BookingForm from "../../components/bookingForm/BookingForm";
 
-const Reservations = () => {
+const BookingPage = () => {
   return (
     <Container className="reservation-page">
       <h1>Reserve a table</h1>
@@ -11,9 +11,9 @@ const Reservations = () => {
         temporibus quod. Laborum recusandae a asperiores perferendis suscipit
         possimus, blanditiis sunt dolor.
       </p>
-      <ReservationForm />
+      <BookingForm />
     </Container>
   );
 };
 
-export default Reservations;
+export default BookingPage;

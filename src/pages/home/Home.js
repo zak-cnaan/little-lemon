@@ -1,15 +1,15 @@
 import Hero from "../../components/hero/Hero";
 import Specials from "../../components/specials/Specials";
-import Testominials from "../../components/testominials/Testominials";
+import CustomersSay from "../../components/customersSay/CustomersSay";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Hero />
       <Specials />
-      <Testominials />
+      <CustomersSay />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
